@@ -79,7 +79,7 @@
                                         <a href="{{route('film', ['id' => $item->film->id, 'uri' => Help::beauty($item->film->name)])}}"
                                            title="{{$item->film->name}}">{{$item->film->name}}</a>
                                     </td>
-                                    <td><img src="{{$item->film->poster}}" alt="" width="50px" height="50px"></td>
+                                    <td><img src="{{"/images/" .$item->film->poster}}" alt="" width="50px" height="50px"></td>
                                     <td>
                                         <button id="like-button" data-id="{{$item->film->id}}"
                                                 class="btn btn-inline btn-primary">
@@ -117,7 +117,7 @@
                                         <a href="{{route('film', ['id' => $item->film->id, 'uri' => Help::beauty($item->film->name)])}}"
                                            title="{{$item->film->name}}">{{$item->film->name}}</a>
                                     </td>
-                                    <td><img src="{{$item->film->poster}}" alt="" width="50px" height="50px"></td>
+                                    <td><img src="{{"/images/" .$item->film->poster}}" alt="" width="50px" height="50px"></td>
                                     <td>
                                         <span class="star-point">{{$item->point}}</span> <i class="fa fa-star"
                                                                                             style="color: #ED8A19"></i>

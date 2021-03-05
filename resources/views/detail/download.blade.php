@@ -5,7 +5,7 @@
             <div class="col-md-9 col-sm-8">
                 <a href="{{route('film.view', ['uri' => Help::beauty($film->name), 'id' => $film->id])}}">
                     <div class="slide-home">
-                        <div class="thumb" style="background-image: url({{$film->poster}});"></div>
+                        <div class="thumb" style="background-image: url({{"/images/" .$film->poster}});"></div>
                         <div class="play"></div>
                     </div>
                 </a>

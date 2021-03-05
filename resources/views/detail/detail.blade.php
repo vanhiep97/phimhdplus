@@ -4,7 +4,7 @@
         <div class="col-md-9 col-sm-8">
             <a href="{{route('film.view', ['uri' => Help::beauty($film->name), 'id' => $film->id])}}">
                 <div class="slide-home">
-                    <div class="thumb" style="background-image: url({{$film->poster}});"></div>
+                    <div class="thumb" style="background-image: url({{"/images/" .$film->poster}});"></div>
                     <div class="play"></div>
                 </div>
             </a>
@@ -66,17 +66,20 @@
                     @foreach ($relate as $item)
                         <div class="col-md-3 col-sm-4 col-xs-6">
                             <div class="list-item" title="{{$item->name}}">
+                                <a href="{{route('film', ['uri' => Help::beauty($item->name), 'id' => $item->id])}}"
+                                   title="{{$item->name}}">
                                 <div class="star-rank-{{$item->total_vote}}"></div>
                                 @if ($item->type === 2)
                                     <div class="episode">{{sizeof($item->filmDetail)}}/{{$item->episode}}</div>
                                 @endif
-                                <div class="thumb" style="background-image: url({{$item->poster}});"></div>
+                                <div class="thumb" style="background-image: url({{"/images/" .$item->poster}});"></div>
                                 <div class="play"></div>
                                 <div class="black-gradient"></div>
                                 <div class="film-name">
                                     <a href="{{route('film', ['uri' => Help::beauty($item->name), 'id' => $item->id])}}"
                                        title="{{$item->name}}">{{$item->name}}</a>
                                 </div>
+                                </a>
                             </div>
                         </div>
                     @endforeach

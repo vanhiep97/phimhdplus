@@ -25,7 +25,7 @@
                                         <a href="{{route('film', ['id' => $item->id, 'uri' => Help::beauty($item->name)])}}"
                                            title="{{$item->name}}">{{$item->name}}</a>
                                     </td>
-                                    <td><img src="{{$item->poster}}" alt="" width="50px" height="50px"></td>
+                                    <td><img src="{{"/images/" .$item->poster}}" alt="" width="50px" height="50px"></td>
                                     <td>{{$item->disable ? 'Bị ẩn' : 'Đang hiển thị'}}</td>
                                     <td>
                                         <a href="{{route('admin.film.source', ['id' => $item->id])}}">

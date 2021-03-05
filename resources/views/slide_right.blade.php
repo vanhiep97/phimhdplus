@@ -8,7 +8,7 @@
     <h1 class="title">TOP PHIM - PHIMHD+</h1>
     @foreach ($topRate as $item)
         <div class="list-item-bar">
-            <div class="thumb" style="background-image: url({{$item->poster}})"></div>
+            <div class="thumb" style="background-image: url({{"/images/" .$item->poster}})"></div>
             <div class="info-film">
                 <span class="film-name">
                     <a href="{{route('film', ['uri' => Help::beauty($item->name), 'id' => $item->id])}}"

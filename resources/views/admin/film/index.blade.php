@@ -23,7 +23,7 @@
                                            title="{{$item->name}}">{{$item->name}}</a>
                                     </td>
                                     <td>
-                                        <img src="{{$item->poster}}" alt="" width="50px" height="50px">
+                                        <img src="{{"/images/" .$item->poster}}" alt="" width="50px" height="50px">
                                     </td>
                                     <td>
                                         <a href="{{route('admin.film.source', ['id' => $item->id])}}">

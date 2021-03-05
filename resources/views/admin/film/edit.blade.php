@@ -18,14 +18,14 @@
                     <div class="col-md-4 col-sm-4">
                         <label for="">Mô tả ngắn:</label>
                         <textarea name="about">{{$film->about}}</textarea>
-                        <label for="">Danh mục: {{sizeof($parent) === 0 ? '(Phim này chưa có danh mục)':''}}</label>
+                        <label for="">Danh mục: {{count($parent->toArray()) === 0 ? '(Phim này chưa có danh mục)':''}}</label>
                         <div class="multiSelect">
                             <span>Chọn danh mục...</span>
                             <ul class="dropSelect" id="category_parent">
                                 @foreach ($categoryParent as $item)
                                     <li>
                                         <input type="radio" name="category_parent"
-                                               value="{{$item->id}}" {{sizeof($parent) > 0 && $item->id == $parent->id ? "checked" : ""}}> {{$item->name}}
+                                               value="{{$item->id}}" {{count($parent->toArray()) > 0 && $item->id == $parent->id ? "checked" : ""}}> {{$item->name}}
                                     </li>
                                 @endforeach
                             </ul>
@@ -34,7 +34,7 @@
                         <div class="multiSelect">
                             <span>Chọn nhiều...</span>
                             <ul class="dropSelect" id="dropSelect">
-                                @if (sizeof($parent) > 0)
+                                @if (count($parent->toArray()) > 0)
                                     @foreach ($parent->child as $item)
                                         <li>
                                             <input type="checkbox" name="category[]"
@@ -54,7 +54,7 @@
                         <input type="file" name="poster">
                         <label for="">Poster cũ:</label>
                         <div class="old-poster">
-                            <img src="{{$film->poster}}" alt="">
+                            <img src="{{"/images/" .$film->poster}}" alt="">
                         </div>
                         <br>
                         <input type="checkbox" name="is_slide" {{$film->is_slide ? "checked" : ""}}> Đặt làm Slide <br>

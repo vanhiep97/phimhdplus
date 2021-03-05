@@ -30,7 +30,7 @@
                                         @if ($item->type === 2)
                                             <div class="episode">{{sizeof($item->filmDetail)}}/{{$item->episode}}</div>
                                         @endif
-                                        <div class="thumb" style="background-image: url({{$item->poster}});"></div>
+                                        <div class="thumb" style="background-image: url({{"/images/" .$item->poster}});"></div>
                                         <div class="play"></div>
                                         <div class="black-gradient"></div>
                                         <div class="film-name">

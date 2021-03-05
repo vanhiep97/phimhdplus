@@ -1,5 +1,7 @@
 /node_modules
 /public/upload/*
+/public/images/*
+/public/videos/*
 /vendor
 /.idea
 /.vagrant
